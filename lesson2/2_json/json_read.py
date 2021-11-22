@@ -7,28 +7,27 @@ print('----- использование метода load для чтения js
 print('----- преобразуем json-объект в python-объект (словарь) -----')
 with open('mes_example_read.json', encoding='utf-8') as f_n:
     print('type(f_n): ', type(f_n))
-    OBJ = json.load(f_n)  # итерируемый объект и авриант reader-a (load для json и yaml) сразу получаем словарь с пом load
+    OBJ = json.load(f_n)  # итерируемый объект и вариант reader-a (load для json и yaml)
+    # сразу получаем то что нужно: словарь с пом load (OBJ = словарь)
     print('type(OBJ): ', type(OBJ))
-    pprint(OBJ)
-
-print(f'==> {type(f_n)} ==> json.load() ==> {type(OBJ)} ==>')
-
-for section, commands in OBJ.items():
-    print(f'{section}, {commands}')
-
-print()
-print('----- использование метода loads для чтения json-файла, как строки -----')
-print('----- преобразуем json-строку в python-объект (словарь) -----')
-with open('mes_example_read.json', encoding='utf-8') as f_n:
-    F_N_CONTENT = f_n.read()
-    print('F_N_CONTENT: \n', F_N_CONTENT)
-    print('type(F_N_CONTENT)" ', type(F_N_CONTENT))
-    OBJ = json.loads(F_N_CONTENT)
-    print('type(OBJ): ', type(OBJ))
-
-print(f'==> {type(f_n)} ==> {type(F_N_CONTENT)} ==> json.loads() ==> {type(OBJ)} ==>')
-
-for section, commands in OBJ.items():
-    print(f'{section}, {commands}')
-
-
+    print(OBJ)
+#
+# print(f'==> {type(f_n)} ==> json.load() ==> {type(OBJ)} ==>')
+#
+# for section, commands in OBJ.items():
+#     print(f'{section}, {commands}')
+#
+# print()
+# print('----- использование метода loads для чтения json-файла, как строки -----')
+# print('----- преобразуем json-строку в python-объект (словарь) -----')
+# with open('mes_example_read.json', encoding='utf-8') as f_n:
+#     F_N_CONTENT = f_n.read()
+#     print('F_N_CONTENT: \n', F_N_CONTENT)
+#     print('type(F_N_CONTENT): ', type(F_N_CONTENT))
+#     OBJ = json.loads(F_N_CONTENT)
+#     print('type(OBJ): ', type(OBJ))
+#
+# print(f'==> {type(f_n)} ==> {type(F_N_CONTENT)} ==> json.loads() ==> {type(OBJ)} ==>')
+#
+# for section, commands in OBJ.items():
+#     print(f'{section}, {commands}')

@@ -65,7 +65,7 @@ def data_from_doc(doc):
 # print(data_from_doc('info_1.txt'))
 # print(data_from_doc('info_2.txt'))
 # print(data_from_doc('info_3.txt'))
-
+print('----- получение данных из документов .txt -----')
 MAIN_DATA = [['os_prod_list', 'os_name_list', 'os_code_list', 'os_type_list'],
              [data_from_doc('info_1.txt')[0], data_from_doc('info_1.txt')[1], data_from_doc('info_1.txt')[2],
               data_from_doc('info_1.txt')[3]],
@@ -82,3 +82,19 @@ with open('hw_data_write.csv', 'w', encoding='utf-8') as f_n:
     F_N_WRITER = csv.writer(f_n)  # итерируемый объект writer
     for row in MAIN_DATA:  # загоняем строки, обращаясь к объекту построчно (нужно следовать условию)
         F_N_WRITER.writerow(row)
+
+# удаление пустых строк из файла csv
+with open('hw_data_write.csv') as data_input, open('hw_data_read.csv', 'w', newline='') as data_output:
+    writer = csv.writer(data_output)
+    for row in csv.reader(data_input):
+        if any(field.strip() for field in row):
+            writer.writerow(row)
+
+
+print('----- простое чтение из файла hw_data_read.csv ------')
+with open('hw_data_read.csv', encoding='utf-8') as f_n:  # открываем файл помня о кодировке
+    F_N_READER = csv.reader(f_n)  # создаём итерируемый объект с именем пакета и аналогом reader-a
+    # print(type(F_N_READER))
+    for row in F_N_READER:
+        print(row)  # открываем как список
+        # последняя пустая строка не удаляется
