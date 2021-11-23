@@ -20,7 +20,7 @@ def write_order_to_json(item, quantity, price, buyer, date):
         result = json.loads(outfile.read())
     # Функция должна предусматривать запись данных в виде словаря в файл orders.json
     result['orders'].append({'item': item, 'quantity': quantity, 'price': price, 'buyer': buyer, 'date': date})
-    with open('orders_json_write.json', 'w', encoding='utf-8') as outfile:
+    with open('orders.json', 'w', encoding='utf-8') as outfile:
         json.dump(result, outfile, sort_keys=True, indent=4, ensure_ascii=False)
         # величину отступа в 4 пробельных символа --> indent=4
     print('запись в файл выполнена')
