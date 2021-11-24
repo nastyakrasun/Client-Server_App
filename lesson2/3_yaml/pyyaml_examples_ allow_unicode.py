@@ -16,9 +16,8 @@ DATA_TO_YAML = {'action': ACTION_LIST, 'names': AS_SET, 'to': TO_LIST}
 with open('data_write_3.yaml', 'w', encoding='utf-8') as f_n:
     # yaml.dump(DATA_TO_YAML, f_n, default_flow_style=False)
     yaml.dump(DATA_TO_YAML, f_n, default_flow_style=False, allow_unicode=True)
+    # allow_unicode=True - для буквенного написания символов >127го в ascii
 
 with open('data_write_3.yaml', encoding='utf-8') as f_n:
     F_N_CONTENT = yaml.load(f_n, Loader=yaml.FullLoader)
     print(F_N_CONTENT)
-
-
