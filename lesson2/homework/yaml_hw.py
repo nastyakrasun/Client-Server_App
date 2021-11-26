@@ -34,18 +34,19 @@ DATA_TO_YAML = {
 
 
 def write_to_yaml(data):
-    with open('file.yaml', 'w') as outfile:  # сохранение данных в файл file.yaml
-        yaml.dump(data, outfile, default_flow_style=False, allow_unicode=True, sort_keys=False)
+    with open('file.yaml', 'w', encoding='utf-8') as file_in:  # сохранение данных в файл file.yaml
+        yaml.dump(data, file_in, default_flow_style=False, allow_unicode=True, sort_keys=False)
     # стилизацию файла с пом default_flow_style, allow_unicode = True;
     return ' файл записан '
 
 
 def check_data(filename, data):
     print(' чтение .yaml-файла ')
-    with open(filename) as outfile:  # Реализовать считывание данных из созданного файла
-        print(outfile.read())
-        # if outfile.read() == data:  # проверить, совпадают ли они с исходными  -- не знаю как проверить
-        # # 'file.yaml' == DATA_TO_YAML)  -- False
+    with open(filename, 'r', encoding='utf-8') as file_out:  # Реализовать считывание данных из созданного файла
+        print(file_out.read())
+        # data_out = yaml.load(file_out, Loader=yaml.SafeLoader)
+        # if data == data_out:  # проверить, совпадают ли они с исходными  -- не знаю как проверить
+        #     # 'file.yaml' == DATA_TO_YAML)  -- False
         #     print(' файлы совпадают ')
         # else:
         #     print(' файлы не совпадают ')
