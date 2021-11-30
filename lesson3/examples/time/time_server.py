@@ -1,11 +1,12 @@
 """Программа сервера времени"""
 
-from socket import socket, AF_INET, SOCK_STREAM
+from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
 import time
 
 SERV_SOCK = socket(AF_INET, SOCK_STREAM)
 SERV_SOCK.bind(('', 8888))
-SERV_SOCK.listen(5)
+SERV_SOCK.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
+SERV_SOCK.listen()
 
 try:
     while True:
