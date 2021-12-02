@@ -12,9 +12,9 @@ Salary = namedtuple('Salary', ('surname', 'name', 'worked', 'rate'))
 
 
 def get_salary(line):
-    '''
+    """
     Вычисление зарплаты работника
-    '''
+    """
 
     result = ()
 
@@ -51,6 +51,8 @@ def test_get_salary_wrong_format():
     assert get_salary(' ') == (), 'Непустые данные'
 
 
+print(get_salary('Лютиков   Руслан     60    10000'))
+
 if __name__ == "__main__":
     test_get_salary_sum()
     test_get_incorrect_salary_sum()
@@ -58,4 +60,4 @@ if __name__ == "__main__":
     test_get_salary_empty()
     test_get_salary_wrong_format()
 
-    print(get_salary(''))
+    # print(get_salary(''))
