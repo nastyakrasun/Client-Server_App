@@ -22,7 +22,7 @@ LOG.setLevel(logging.DEBUG)
 if __name__ == '__main__':
     # Создаём потоковый обработчик логгирования (по умолчанию sys.stderr):
     STREAM_HANDLER = logging.StreamHandler()
-    # console.setLevel(logging.DEBUG)
+    console.setLevel(logging.DEBUG)
     STREAM_HANDLER.setFormatter(FORMATTER)
     LOG.addHandler(STREAM_HANDLER)
     # В логгирование передаем имя текущей функции и имя вызвавшей функции

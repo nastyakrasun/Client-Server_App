@@ -10,7 +10,7 @@ import logging
 LOG = logging.getLogger('app')
 
 # Создать обработчик
-FILE_HANDLER = logging.FileHandler("app_2.log", encoding='utf-8')
+FILE_HANDLER = logging.FileHandler("app_5.log", encoding='utf-8')
 # выводит сообщения с уровнем DEBUG
 FILE_HANDLER.setLevel(logging.DEBUG)
 
