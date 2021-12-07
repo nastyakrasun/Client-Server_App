@@ -1,0 +1,4 @@
+2021-12-07 18:36:10,030 CRITICAL config_server_log.py Критическая ошибка
+2021-12-07 18:36:10,030 ERROR    config_server_log.py Ошибка
+2021-12-07 18:36:10,030 DEBUG    config_server_log.py Отладочная информация
+2021-12-07 18:36:10,030 INFO     config_server_log.py Информационное сообщение

@@ -1,0 +1,13 @@
+actions:
+- download
+- delete
+- upgrade
+- fill
+- update
+to: 5
+currency:
+  Argentina Peso: $
+  Costa Rica Colon: ₡
+  Cuba Peso: ₱
+  Ghana Cedi: ¢
+  Gibraltar Pound: £
