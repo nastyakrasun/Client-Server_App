@@ -25,9 +25,12 @@ def some_func():
 decorator(some_func)
 
 # ==========================================
+# так как функция не обернута, этот вызов не заработает
+# decorator(some_func) - ещё не декоратор
+#
 # func_with_decorator = decorator(some_func)
 # print('Тип функции func_with_decorator : ', type(func_with_decorator))
 # func_with_decorator()
 
-# Однако попытка создать новую функцию func_with_decorator(), где совмещается
-# функции decorator() и some_func() оказалась неудачной
+# попытка создать новую функцию func_with_decorator(),
+# где совмещается функции decorator() и some_func() оказалась неудачной

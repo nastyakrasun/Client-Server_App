@@ -6,12 +6,12 @@
 
 
 def make_ext(func):
-    """Первый декоратор"""
+    """Первый декоратор, внешний"""
     return lambda: "(<ext_tag> " + func() + " </ext_tag>)"
 
 
 def make_int(func):
-    """Второй декоратор"""
+    """Второй декоратор, внутренний"""
     return lambda: "[<int_tag> " + func() + " </int_tag>]"
 
 
@@ -34,4 +34,3 @@ print(my_func())
 #     def wrap(*args, **kwargs):
 #         return "(<ext_tag> " + func() + " </ext_tag>)"
 #     return wrap
-

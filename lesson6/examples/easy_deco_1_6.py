@@ -34,4 +34,4 @@ def some_func(*args, **kwargs):
 
 # ==========================================
 print('=' * 50)
-print('main_info из функции some_func() ==', some_func())
+print('main_info из функции some_func() ==', some_func(1, 2, a=3, b=4))

@@ -5,10 +5,12 @@ import requests
 
 
 def decorator(iters):
-    print('Этот декоратор!!!!')
+    print('Это декоратор!!!')
     """Внешняя функция (формально - декоратор)"""
+
     def real_decorator(func):
         """Сам декоратор"""
+
         def wrapper(*args, **kwargs):
             """Обертка"""
             total_time = 0
@@ -23,6 +25,7 @@ def decorator(iters):
             print(f'Среднее время выполнения: {total_time / iters:.2f} секунд')
 
         return wrapper
+
     return real_decorator
 
 
@@ -33,4 +36,10 @@ def get_wp(url):
     return res
 
 
+# # вызовем функцию без декоратора (уберём синтаксический сахар)
+# decorator(10)(get_wp)('https://yandex.ru')  # вызвали декоратор с параметром
+# # + указали имя функции, чтобы выйти из цикла итераций в декортаоре
+# # ++ добавили параметр - адрес запроса
+
+get_wp('https://yandex.ru')
 get_wp('https://google.com')

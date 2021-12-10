@@ -13,7 +13,7 @@ def sleep(timeout):
             time.sleep(timeout)
             res = func(*args, **kwargs)
 
-            print(f'Функция {func.__name__} зависла')
+            print(f'Функция {func.__name__} работает - вызывается декоратор')
             return res
         return decorated
     return decorator
@@ -30,5 +30,5 @@ def factorial(param):
 
 print(' -- Использован декоратор, реализованный через функцию --')
 print('!!! Обратите внимание на то, сколько раз будет вызван декоратор (рекурсия) !!!')
-print(factorial(5))
+print(factorial(4))
 print()
