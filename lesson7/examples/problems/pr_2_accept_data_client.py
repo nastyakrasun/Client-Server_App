@@ -7,6 +7,6 @@ CLIENT_SOCK.connect(('localhost', 8007))
 while True:
     MSG = 'Привет, сервер'
     CLIENT_SOCK.send(MSG.encode('utf-8'))
-    DATA = CLIENT_SOCK.recv(4096)
-    print(f"Сообщение от сервера: {DATA.decode('utf-8')} длиной {len(DATA)} байт")
+    DATA = CLIENT_SOCK.recv(8007)
+    print(f"Сообщение от сервера: '{DATA.decode('utf-8')}', длиной {len(DATA)} байт")
 CLIENT_SOCK.close()

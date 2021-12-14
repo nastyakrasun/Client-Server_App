@@ -13,12 +13,12 @@ try:
         CLIENT_S, ADDR = SERV_SOCK.accept()
         SOCKETS.append(CLIENT_S)
         for CLIENT_SOCK in SOCKETS:
-            DATA = CLIENT_SOCK.recv(4096)
+            DATA = CLIENT_SOCK.recv(8007)
             if DATA == b'exit':
                 # find CLIENT_SOCK and remove from DATA
                 SOCKETS.remove(CLIENT_SOCK)
                 CLIENT_SOCK.close()
-            print(f"Сообщение: {DATA.decode('utf-8')} было отправлено клиентом: {ADDR})")
+            print(f"Сообщение: '{DATA.decode('utf-8')}', отправлено клиентом: {ADDR})")
             MSG = 'Привет, клиент'
             CLIENT_SOCK.send(MSG.encode('utf-8'))
 finally:

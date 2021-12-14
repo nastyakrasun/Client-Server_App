@@ -11,8 +11,8 @@ try:
     while True:
         CLIENT_SOCK, ADDR = SERV_SOCK.accept()
         DATA = CLIENT_SOCK.recv(4096)
-        print(f"Сообщение: {DATA.decode('utf-8')} было отправлено клиентом: {ADDR})")
-        MSG = 'Привет, клиент'
+        print(f"Сообщение: {DATA.decode('utf-8')}\nОтправлено клиентом: {ADDR})")
+        MSG = 'Привет, клиент!'
         CLIENT_SOCK.send(MSG.encode('utf-8'))
         CLIENT_SOCK.close()
 finally:
