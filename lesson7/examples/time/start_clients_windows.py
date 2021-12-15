@@ -1,5 +1,6 @@
 """
-Служебный скрипт запуска/останова нескольких клиентских приложений
+Служебный скрипт запуска/остановки серверного и нескольких клиентских приложений
+на отправку/приём сообщений (о текущем времени)
 """
 
 from subprocess import Popen, CREATE_NEW_CONSOLE
@@ -8,17 +9,18 @@ from subprocess import Popen, CREATE_NEW_CONSOLE
 P_LIST = []
 
 while True:
-    USER = input("Запустить 10 клиентов (s) / Закрыть клиентов (x) / Выйти (q) ")
+    USER = input("Запустить 3 клиентов (s) / Закрыть клиентов (x) / Выйти (q) ")
 
     if USER == 'q':
         break
 
     elif USER == 's':
-        for _ in range(10):
+        P_LIST.append(Popen('python time_server_select.py', creationflags=CREATE_NEW_CONSOLE))
+        for _ in range(3):
 
             P_LIST.append(Popen('python time_client_random.py', creationflags=CREATE_NEW_CONSOLE))
 
-        print(' Запущено 10 клиентов')
+        print('Запущено 3 клиента')
     elif USER == 'x':
         for p in P_LIST:
             p.kill()
