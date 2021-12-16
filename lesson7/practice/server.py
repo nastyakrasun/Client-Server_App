@@ -78,7 +78,7 @@ def main():
     # Готовим сокет
     transport = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     transport.bind((listen_address, listen_port))
-    transport.settimeout(0.5)
+    transport.settimeout(1.5)
 
     # список клиентов , очередь сообщений
     clients = []

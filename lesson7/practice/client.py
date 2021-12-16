@@ -111,7 +111,7 @@ def arg_parser():
 
 
 def main():
-    """Загружаем параметы коммандной строки"""
+    """Загружаем параметры коммандной строки"""
     server_address, server_port, client_mode = arg_parser()
 
     LOGGER.info(
