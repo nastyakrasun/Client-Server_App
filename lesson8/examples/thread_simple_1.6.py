@@ -8,9 +8,12 @@ def clock(interval):
     """Функция, которая может быть запущена в потоке"""
 
     while True:
+        start = time.time()
         time.sleep(interval)
         print(interval)
-        print(f"Текущее время: {time.ctime()}")
+        end = time.time()
+        print(f"Время окончания программы {interval}: {time.ctime()}")
+        print('end-start =', end - start)
         # break
 
 
@@ -26,6 +29,8 @@ THR2 = Thread(target=clock, args=(3, ))
 print(f"Время запуска основной программы: {time.ctime()}")
 start = time.time()
 THR1.daemon = True
+# параметр daemon можно указать сразу в описании процесса
+# THR1 = Thread(target=clock, args=(2, ), daemon=True)
 THR2.daemon = True
 THR1.start()
 THR2.start()

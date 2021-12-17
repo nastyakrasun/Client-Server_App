@@ -16,6 +16,8 @@ def clock(interval):
 
 THR1 = Thread(target=clock, args=(2, ))
 THR2 = Thread(target=clock, args=(3, ))
+THR3 = Thread(target=clock, args=(5, ))
+THR4 = Thread(target=clock, args=(7, ))
 
 """
 Обычно Python-приложение не завершается, пока работает хоть один его поток. 
@@ -28,6 +30,8 @@ start = time.time()
 # THR1.daemon = True
 THR1.start()
 THR2.start()
+THR3.start()
+THR4.start()
 # THR1.join()
 # THR2.join()
 end = time.time()

@@ -8,9 +8,12 @@ def clock(interval):
     """Функция, которая может быть запущена в потоке"""
 
     while True:
+        start = time.time()
         time.sleep(interval)
         print(interval)
-        print(f"Текущее время: {time.ctime()}")
+        end = time.time()
+        print(f"Время окончания программы {interval}: {time.ctime()}")
+        print('end-start =', end - start)
         # break
 
 
