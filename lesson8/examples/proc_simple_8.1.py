@@ -13,6 +13,7 @@ def clock(interval):
     while True:
         time.sleep(interval)
         print(f"The time is {time.ctime()}")
+        print('из-за daemon=True мы этого не увидим')
         break
 
 

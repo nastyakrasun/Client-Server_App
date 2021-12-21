@@ -13,6 +13,8 @@ def clock(interval):
     while True:
         time.sleep(interval)
         print(f"The time is {time.ctime()}")
+        print('несмотря на daemon=True вспомогат процесс завершится до конца, так как его время выполнения меньше '
+              'указанной в осн процессе задержки')
         break
 
 
@@ -22,7 +24,7 @@ if __name__ == "__main__":
     PROC.start()
     # PROC.join()
     print(f"The time of main process is {time.ctime()}")
-    time.sleep(4)
+    time.sleep(5)
     print(f"The time of main process is {time.ctime()}")
 
 # Основной и дополнительный процесс запускаются вместе

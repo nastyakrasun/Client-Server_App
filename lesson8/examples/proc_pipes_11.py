@@ -29,8 +29,8 @@ def producer(sequence_obj, input_pipe):
     """
     Создает элементы и помещает их в канал. Переменная sequence представляет
     итерируемый объект с элементами, которые требуется обработать.
-    :param sequence:
-    :param input_p:
+    :param input_pipe:
+    :param sequence_obj:
     :return:
     """
     for item in sequence_obj:

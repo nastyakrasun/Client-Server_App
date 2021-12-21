@@ -24,7 +24,7 @@ def consumer():
 def producer():
     """Поставщик"""
     global ITEM
-    time.sleep(5)
+    time.sleep(3)
     # Создать случайное значение
     ITEM = random.randint(0, 1000)
     print(f"Поставщик: создано значение {ITEM}")
@@ -36,7 +36,7 @@ def producer():
 
 
 if __name__ == '__main__':
-    for _ in range(5):
+    for _ in range(10):
         THR_1 = threading.Thread(target=producer)
         THR_2 = threading.Thread(target=consumer)
         THR_1.start()
